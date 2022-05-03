@@ -23,8 +23,8 @@ node
       echo "Deploying to PROD environment"
       }
       
-    sh """chmod +x helloWorld.sh 
-    ./helloWorld.sh"""
+    sh """chmod +x hello.sh 
+    ./hello.sh"""
  
     }
 }

@@ -1,4 +1,5 @@
 def call(){
+    environment { SERVICE_DIRECTORY = "~/apps/jenkins/workspace/"}
     dir(SERVICE_DIRECTORY) {
     printEnv()
     echo"Cloning repo..."

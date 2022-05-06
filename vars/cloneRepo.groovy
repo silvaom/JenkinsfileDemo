@@ -4,5 +4,6 @@ def call(){
     printEnv()
     echo"Cloning repo..."
     checkout scm
+        }
     }
 }

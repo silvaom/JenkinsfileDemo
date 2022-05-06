@@ -2,7 +2,7 @@ node
   {
   stage('checkout')
     {
-    checkout scm
+    //checkout scm
     }
   stage('deploy')
     {
@@ -21,6 +21,7 @@ node
     else if (env.BRANCH_NAME.startsWith("master"))
       {
       echo "Deploying to PROD environment"
+      cloneRepo()
       }
       
     sh """chmod +x hello.sh 

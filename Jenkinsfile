@@ -1,3 +1,5 @@
+@Library('jenkins-shared-libraries') _
+
 node
   {
   stage('checkout')
@@ -11,6 +13,7 @@ node
     if (env.BRANCH_NAME.startsWith("Feature/"))
       {
       echo "Deploying to Dev environment after build"
+      cloneRepo()
       }
       
     else if (env.BRANCH_NAME.startsWith("Release/"))

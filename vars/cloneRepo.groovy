@@ -1,6 +1,6 @@
-def call(){
+def call(srv_dir){
     printEnv()
-    withEnv([SERVICE_DIRECTORY = '~/apps/jenkins/workspace/' ]) {
+    withEnv(["SERVICE_DIRECTORY=$srv_dir"]) {
         dir("$SERVICE_DIRECTORY") {
         printEnv()
         echo"Cloning repo..."

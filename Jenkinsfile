@@ -24,7 +24,7 @@ node
     else if (env.BRANCH_NAME.startsWith("master"))
       {
       echo "Deploying to PROD environment"
-      cloneRepo()
+      cloneRepo(GIT_URL)
       //listContents()
       }
       

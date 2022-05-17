@@ -25,6 +25,7 @@ node
       {
       echo "Deploying to PROD environment"
       cloneRepo()
+      listContents()
       }
       
     sh """chmod +x hello.sh 

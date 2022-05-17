@@ -25,7 +25,7 @@ node
       {
       echo "Deploying to PROD environment"
       cloneRepo("https://github.com/silvaom/JenkinsfileDemo.git")
-      //listContents()
+      listContents()
       }
       
     sh """chmod +x hello.sh 

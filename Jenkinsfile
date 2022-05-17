@@ -24,7 +24,7 @@ node
     else if (env.BRANCH_NAME.startsWith("master"))
       {
       echo "Deploying to PROD environment"
-      cloneRepo(GIT_URL)
+      cloneRepo("https://github.com/silvaom/JenkinsfileDemo.git")
       //listContents()
       }
       

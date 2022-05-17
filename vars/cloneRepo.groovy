@@ -4,7 +4,7 @@ def call(srv_dir){
         dir("$SERVICE_DIRECTORY") {
         printEnv()
         echo"Cloning repo..."
-        checkout scm
+        //checkout scm
             }
         }
 }

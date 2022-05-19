@@ -12,5 +12,6 @@ def call() {
                     git status
                   '''
                 )
-    }
+          }
+      }
 }

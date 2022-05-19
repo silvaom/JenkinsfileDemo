@@ -24,12 +24,9 @@ node
     else if (env.BRANCH_NAME.startsWith("master"))
       {
       echo "Deploying to PROD environment"
-      //cloneRepo("https://github.com/silvaom/JenkinsfileDemo.git")
-      listContents()
       }
       
-    sh """chmod +x hello.sh 
-    ./hello.sh"""
-    
+    sh """chmod +x ./scripts/hello.sh 
+    ./scripts/hello.sh"""
     }
 }

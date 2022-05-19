@@ -4,8 +4,8 @@ def call(srv_dir){
         dir("$SERVICE_DIRECTORY") {
         printEnv()
         //echo"Cloning $GIT_URL..."
-        //checkout scm
-        //git status
+        checkout scm
+        git status
             }
         }
 }

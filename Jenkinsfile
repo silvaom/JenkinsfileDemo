@@ -29,7 +29,8 @@ node
     sh """
     pwd
     ls -la
-    chmod +x ./scripts/hello.sh 
+    ls -la scripts
+    chmod +x /scripts/hello.sh 
     ./scripts/hello.sh"""
     }
 }

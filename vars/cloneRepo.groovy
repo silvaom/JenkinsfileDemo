@@ -5,6 +5,7 @@ def call(srv_dir){
         printEnv()
         //echo"Cloning $GIT_URL..."
         //checkout scm
+        //git status
             }
         }
 }

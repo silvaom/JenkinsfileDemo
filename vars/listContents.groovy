@@ -7,7 +7,6 @@ def call() {
                     pwd
                     ls -la
                     echo "$SERVICE_DIRECTORY"
-                    git status
                   '''
                 )
           }

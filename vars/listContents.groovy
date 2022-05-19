@@ -11,5 +11,6 @@ def call() {
                     echo "$SERVICE_DIRECTORY
                     git status
                   '''
-        }
+                )
+    }
 }

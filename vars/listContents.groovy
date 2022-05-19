@@ -1,5 +1,5 @@
 def call() {
-    withEnv(["SERVICE_DIRECTORY=PyETL"]) {
+    withEnv(["SERVICE_DIRECTORY=scripts"]) {
         dir(SERVICE_DIRECTORY) {
                 echo "$label"
                 sh (

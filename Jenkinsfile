@@ -26,7 +26,10 @@ node
       echo "Deploying to PROD environment"
       }
       
-    sh """chmod +x ./scripts/hello.sh 
+    sh """
+    pwd
+    ls -la
+    chmod +x ./scripts/hello.sh 
     ./scripts/hello.sh"""
     }
 }

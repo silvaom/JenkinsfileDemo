@@ -6,7 +6,7 @@ def call() {
                     set -euxo pipefail
                     pwd
                     ls -la
-                    echo "$SERVICE_DIRECTORY
+                    echo "$SERVICE_DIRECTORY"
                     git status
                   '''
                 )

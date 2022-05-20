@@ -2,9 +2,14 @@
 
 node
   {
+  environment{
+    INPUT_TAG=""
+    GITREPO="https://github.com/silvaom/JenkinsfileDemo.git"
+    BRANCH="Feature/library"
+  }
   stage('checkout')
     {
-    checkout scm
+    //checkout scm
     }
   stage('deploy')
     {
@@ -13,7 +18,7 @@ node
     if (env.BRANCH_NAME.startsWith("Feature/"))
       {
       echo "Deploying to Dev environment after build"
-      cloneRepo()
+      clone()
       }
       
     else if (env.BRANCH_NAME.startsWith("Release/"))
@@ -24,6 +29,7 @@ node
     else if (env.BRANCH_NAME.startsWith("master"))
       {
       echo "Deploying to PROD environment"
+      clone()
       }
       
     sh """

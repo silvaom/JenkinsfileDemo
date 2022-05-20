@@ -18,19 +18,20 @@ node
     if (env.BRANCH_NAME.startsWith("Feature/"))
       {
       echo "Deploying to Dev environment after build"
-      clone()
+      sh "pwd"
+      sh "ls -la"
       }
       
     else if (env.BRANCH_NAME.startsWith("Release/"))
       {
       echo "Deploying to Stage after build and Dev Deployment"
+      sh "pwd"
+      sh "ls -la"
       }
       
     else if (env.BRANCH_NAME.startsWith("master"))
       {
       echo "Deploying to PROD environment"
-      //clone()
-      //echo "Done"
       }
       
     sh """

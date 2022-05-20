@@ -4,8 +4,8 @@ node
   {
   environment{
     INPUT_TAG=""
-    GITREPO="https://github.com/silvaom/JenkinsfileDemo.git"
-    BRANCH="Feature/library"
+    DIR_WINDOWS=""
+    SERVICE_DIRECTORY="python"
   }
   stage('checkout')
     {

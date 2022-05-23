@@ -1,5 +1,5 @@
 def call(Map params) {
-        sh'''
+        sh '''
           #!/bin/bash
           set -eux pipefail
           echo "${params.GITREPO}"

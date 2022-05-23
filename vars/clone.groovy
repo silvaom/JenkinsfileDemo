@@ -1,12 +1,11 @@
-def call() {
-    sh (
-        script: '''#!/bin/bash
+def call(Map params) {
+        sh'''
+          #!/bin/bash
           set -euxo pipefail
-          echo "$GITREPO"
-          echo "$BRANCH"
+          echo "${params.GITREPO}"
+          echo "${params.BRANCH}"
           git status
-          git clone "$GITREPO" 
-          git checkout "$BRANCH"
+          git clone "${params.GITREPO}" 
+          git checkout "${params.BRANCH}"
         '''
-    )
 }

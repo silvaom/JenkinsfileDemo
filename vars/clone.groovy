@@ -1,7 +1,7 @@
 def call(Map params) {
         sh'''
           #!/bin/bash
-          set -euxo pipefail
+          set -eux pipefail
           echo "${params.GITREPO}"
           echo "${params.BRANCH}"
           git status

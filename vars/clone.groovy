@@ -1,11 +1,9 @@
-def call(Map params) {
+def call() {
         sh '''
-          #!/bin/bash
-          set -eux pipefail
-          echo "${params.GITREPO}"
-          echo "${params.BRANCH}"
+          echo "${env.GITREPO}"
+          echo "${env.BRANCH}"
           git status
-          git clone "${params.GITREPO}" 
+          git clone "${params.GITREPO}"
           git checkout "${params.BRANCH}"
         '''
 }

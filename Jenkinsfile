@@ -1,6 +1,7 @@
 @Library('jenkins-shared-libraries') _
 
 pipeline {
+  agent any 
   //environment{
   //  INPUT_TAG=""
   //  DIR_WINDOWS=""

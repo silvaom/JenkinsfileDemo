@@ -42,9 +42,4 @@ node
     chmod +x ./scripts/hello.sh 
     ./scripts/hello.sh"""
     }
-    post {
-      always{
-        deleteDir()
-      }
-    }
 }

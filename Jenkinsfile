@@ -9,12 +9,12 @@ pipeline {
   //  WORKSPACE=""
   //}
   stages {
-    stage('checkout') {
+    stage('Checkout') {
       steps {
         checkout scm
       }
     }
-    stage('deploy')
+    stage('Deploy')
       {
         steps {
           echo 'branch name ' + env.BRANCH_NAME

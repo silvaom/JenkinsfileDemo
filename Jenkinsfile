@@ -12,6 +12,7 @@ pipeline {
     stage('Checkout') {
       steps {
         //checkout scm
+        echo "There should be a step here"
       }
     }
     stage('Deploy')

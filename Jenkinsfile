@@ -6,10 +6,11 @@ node
     INPUT_TAG=""
     DIR_WINDOWS=""
     SERVICE_DIRECTORY="python"
+    WORKSPACE=""
   }
   stage('checkout')
     {
-    //checkout scm
+    checkout scm
     }
   stage('deploy')
     {

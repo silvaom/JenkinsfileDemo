@@ -19,6 +19,7 @@ pipeline {
           echo 'branch name ' + env.BRANCH_NAME
         }
       }
+    stage('Feature') {
       when {
         branch 'Feature/'
       }
@@ -27,6 +28,8 @@ pipeline {
         sh "pwd"
         sh "ls -la"
       }
+    }
+    stage('Release') {
       when {
         branch 'Release/'
       }
@@ -36,7 +39,8 @@ pipeline {
         sh "pwd"
         sh "ls -la"
         }
-        
+    }
+    stage('master') {
       when {
         branch 'master'
       }
@@ -44,7 +48,8 @@ pipeline {
         {
         echo "Deploying to PROD environment"
         }
-      stage('Printing') {
+    }
+    stage('Printing') {
         steps {
         sh """
         pwd

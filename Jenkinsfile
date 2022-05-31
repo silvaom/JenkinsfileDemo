@@ -2,12 +2,12 @@
 
 node
   {
-  environment{
-    INPUT_TAG=""
-    DIR_WINDOWS=""
-    SERVICE_DIRECTORY="python"
-    WORKSPACE=""
-  }
+  //environment{
+  //  INPUT_TAG=""
+  //  DIR_WINDOWS=""
+  //  SERVICE_DIRECTORY="python"
+  //  WORKSPACE=""
+  //}
   stage('checkout')
     {
     checkout scm
@@ -37,6 +37,7 @@ node
       
     sh """
     pwd
+    echo "${WORKSPACE}"
     ls -la
     ls -la scripts
     chmod +x ./scripts/hello.sh 

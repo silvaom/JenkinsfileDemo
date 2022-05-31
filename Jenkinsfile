@@ -2,12 +2,6 @@
 
 pipeline {
   agent any 
-  //environment{
-  //  INPUT_TAG=""
-  //  DIR_WINDOWS=""
-  //  SERVICE_DIRECTORY="python"
-  //  WORKSPACE=""
-  //}
   stages {
     stage('checkout') {
       steps {

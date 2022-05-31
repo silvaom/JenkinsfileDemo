@@ -11,7 +11,7 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        checkout scm
+        //checkout scm
       }
     }
     stage('Deploy')
@@ -56,7 +56,8 @@ pipeline {
         pwd
         ls -la
         ls -la scripts
-        chmod +x ./scripts/hello.sh 
+        chmod +x ./scripts/hello.sh
+        echo "testing"
         ./scripts/hello.sh"""
       }
     }

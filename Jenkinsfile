@@ -1,45 +1,58 @@
 @Library('jenkins-shared-libraries') _
 
-node
-  {
+pipeline {
   //environment{
   //  INPUT_TAG=""
   //  DIR_WINDOWS=""
   //  SERVICE_DIRECTORY="python"
   //  WORKSPACE=""
   //}
-  stage('checkout')
-    {
-    checkout scm
+  stages {
+    stage('checkout') {
+      steps {
+        checkout scm
+      }
     }
-  stage('deploy')
-    {
-    echo 'branch name ' + env.BRANCH_NAME
-    
-    if (env.BRANCH_NAME.startsWith("Feature/"))
+    stage('deploy')
       {
-      echo "Deploying to Dev environment after build"
-      sh "pwd"
-      sh "ls -la"
+        steps {
+          echo 'branch name ' + env.BRANCH_NAME
+        }
       }
-      
-    else if (env.BRANCH_NAME.startsWith("Release/"))
-      {
-      echo "Deploying to Stage after build and Dev Deployment"
-      sh "pwd"
-      sh "ls -la"
+      when {
+        branch 'Feature/'
       }
-      
-    else if (env.BRANCH_NAME.startsWith("master"))
-      {
-      echo "Deploying to PROD environment"
+      steps {
+        echo "Deploying to Dev environment after build"
+        sh "pwd"
+        sh "ls -la"
       }
-      
-    sh """
-    pwd
-    ls -la
-    ls -la scripts
-    chmod +x ./scripts/hello.sh 
-    ./scripts/hello.sh"""
+      when {
+        branch 'Release/'
+      }
+      steps 
+        {
+        echo "Deploying to Stage after build and Dev Deployment"
+        sh "pwd"
+        sh "ls -la"
+        }
+        
+      when {
+        branch 'master'
+      }
+      steps 
+        {
+        echo "Deploying to PROD environment"
+        }
+      stage('Printing') {
+        steps {
+        sh """
+        pwd
+        ls -la
+        ls -la scripts
+        chmod +x ./scripts/hello.sh 
+        ./scripts/hello.sh"""
+      }
     }
+  }
 }

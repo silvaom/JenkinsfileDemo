@@ -7,4 +7,4 @@ echo "The current WORKSPACE is: ${WORKSPACE}"
 
 echo "${INPUT_TAG}"
 
-exit 0 
+exit 0

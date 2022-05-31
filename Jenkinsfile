@@ -2,6 +2,12 @@
 
 pipeline {
   agent any 
+  //environment{
+  //  INPUT_TAG=""
+  //  DIR_WINDOWS=""
+  //  SERVICE_DIRECTORY="python"
+  //  WORKSPACE=""
+  //}
   stages {
     stage('checkout') {
       steps {
@@ -53,6 +59,11 @@ pipeline {
         chmod +x ./scripts/hello.sh 
         ./scripts/hello.sh"""
       }
+    }
+  }
+  post {
+    always {
+      deleteDir()
     }
   }
 }

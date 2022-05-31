@@ -3,6 +3,6 @@
 
 echo "Hello, Jenkins Console"
 
-echo "${WORKSPACE}"
+echo "The current WORKSPACE is: ${WORKSPACE}"
 
 exit 0 

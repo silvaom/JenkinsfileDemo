@@ -9,6 +9,7 @@ pipeline {
   //  different 
   //  files
     CONFIG_DIR="develop"
+    VAR= sh(returnStdout:true, script: 'source ./config/pipeline.yaml').trim()
   }
   stages {
     stage('Checkout') {
@@ -20,6 +21,7 @@ pipeline {
           sh "echo $DIR_WINDOWS"
         }
         sh "echo $DIR_WINDOWS"
+        sh "echo $PYTHON"
         } 
       }
     stage('Deploy')

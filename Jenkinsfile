@@ -13,6 +13,7 @@ pipeline {
       steps {
         //checkout scm
         echo "There should be a step here"
+        readFile('config/pipeline.yaml')
       }
     }
     stage('Deploy')

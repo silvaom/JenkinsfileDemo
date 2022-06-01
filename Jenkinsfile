@@ -15,7 +15,7 @@ pipeline {
         checkout scm
         echo "There should be a step here"
         script {
-          readProperties(file: ./config/pipeline.yaml).each {key, value -> env[key] = value }
+          readProperties(file: './config/pipeline.yaml').each {key, value -> env[key] = value }
         }
         sh "echo ${INPUT_TAG}"
         } 

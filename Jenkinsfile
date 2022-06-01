@@ -15,7 +15,7 @@ pipeline {
         checkout scm
         echo "There should be a step here"
         script {
-          Map pipelineConfig = readYaml(file: "./config/pipeline.yaml")
+          def pipelineConfig = readYaml(file: "./config/pipeline.yaml")
         }
         sh "echo ${pipelineConfig.INPUT_TAG}"
         } 

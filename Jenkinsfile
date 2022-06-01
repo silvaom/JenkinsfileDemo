@@ -15,9 +15,9 @@ pipeline {
         checkout scm
         echo "There should be a step here"
         //script {def data = readYaml(file: "config/pipeline.yaml") }
-        sh "ls -la"
+        sh "ls -la ./config"
         dir("config") {
-          script { readFile('file: pipeline.yaml').split('\n') as List }
+          script { readFile(file: "pipeline.yaml").split('\n') as List }
         }
         sh "echo ${GITREPO}"
       }

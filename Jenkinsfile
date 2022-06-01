@@ -17,7 +17,7 @@ pipeline {
         //script {def data = readYaml(file: "config/pipeline.yaml") }
         sh "ls -la ./config"
         script {
-          def config = readYAML(file: "./config/pipeline.yaml").split('\n') as List
+          def config = readYaml(file: "./config/pipeline.yaml").split('\n') as List
           sh "echo ${config.GITREPO}"
         } 
       }

@@ -19,7 +19,6 @@ pipeline {
         sh "echo ${file.GITREPO}"
         } 
       }
-    }
     stage('Deploy')
       {
         steps {

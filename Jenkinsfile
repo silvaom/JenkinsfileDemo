@@ -60,6 +60,7 @@ pipeline {
     stage('Printing') {
         steps {
         sh """
+        echo "$DIR_WINDOWS"
         pwd
         ls -la
         ls -la scripts

@@ -1,5 +1,7 @@
 @Library('jenkins-shared-libraries') _
 
+def data = readYaml(file: "config/pipeline.yaml")
+
 pipeline {
   agent any 
   environment{
@@ -14,7 +16,7 @@ pipeline {
       steps {
         checkout scm
         echo "There should be a step here"
-        script {def data = readYaml(file: "config/pipeline.yaml") }
+        //script {def data = readYaml(file: "config/pipeline.yaml") }
         sh "echo ${data.GITREPO}"
       }
     }

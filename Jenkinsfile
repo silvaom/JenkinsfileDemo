@@ -14,6 +14,7 @@ pipeline {
         //checkout scm
         echo "There should be a step here"
         readFile('config/pipeline.yaml')
+        sh "echo ${INPUT_TAG}"
       }
     }
     stage('Deploy')
@@ -55,7 +56,6 @@ pipeline {
     stage('Printing') {
         steps {
         sh """
-        echo "${INPUT_TAG}"
         pwd
         ls -la
         ls -la scripts

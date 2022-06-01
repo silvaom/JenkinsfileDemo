@@ -16,7 +16,7 @@ pipeline {
         echo "There should be a step here"
         //script {def data = readYaml(file: "config/pipeline.yaml") }
         sh "ls -la"
-        dir(config) {
+        dir("config") {
           script { readFile('file: "pipeline.yaml').split('\n') as List }
         }
         sh "echo ${GITREPO}"

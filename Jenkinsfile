@@ -2,12 +2,13 @@
 
 pipeline {
   agent any 
-  //environment{
+  environment{
   //  INPUT_TAG=""
   //  DIR_WINDOWS=""
   //  SERVICE_DIRECTORY="python"
   //  WORKSPACE=""
-  //}
+      GITREPO=""
+  }
   stages {
     stage('Checkout') {
       steps {

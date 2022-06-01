@@ -15,9 +15,9 @@ pipeline {
         checkout scm
         echo "There should be a step here"
         script {
-          def pipelineConfig = readYaml(file: "./config/pipeline.yaml")
+          load "./config/pipeline.yaml"
         }
-        sh "echo ${pipelineConfig.INPUT_TAG}"
+        sh "echo ${INPUT_TAG}"
         } 
       }
     stage('Deploy')

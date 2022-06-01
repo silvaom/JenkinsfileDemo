@@ -16,9 +16,9 @@ pipeline {
         echo "There should be a step here"
         script {
           load "./config/pipeline.yaml"
-          sh "echo ${env.DIR_WINDOWS}"
+          sh "echo $DIR_WINDOWS"
         }
-        sh "echo ${env.DIR_WINDOWS}"
+        sh "echo $DIR_WINDOWS"
         } 
       }
     stage('Deploy')

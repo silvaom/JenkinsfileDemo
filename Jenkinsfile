@@ -4,13 +4,13 @@ def config = readFile(file: "pipeline.yaml").split('\n') as List
 
 pipeline {
   agent any 
-  environment{
+  //environment{
   //  INPUT_TAG=""
   //  DIR_WINDOWS=""
   //  SERVICE_DIRECTORY="python"
   //  WORKSPACE=""
   //  GITREPO=""
-  }
+  //}
   stages {
     stage('Checkout') {
       steps {

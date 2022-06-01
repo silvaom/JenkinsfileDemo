@@ -2,20 +2,21 @@
 
 pipeline {
   agent any 
-  //environment{
-  //  INPUT_TAG=""
-  //  DIR_WINDOWS=""
-  //  SERVICE_DIRECTORY="python"
-  //  WORKSPACE=""
-  //  GITREPO=""
-  //}
+  environment{
+  //  env variables 
+  //  will be set
+  //  using 
+  //  different 
+  //  files
+    CONFIG_DIR="develop"
+  }
   stages {
     stage('Checkout') {
       steps {
         checkout scm
         echo "There should be a step here"
         script {
-          load "./config/pipeline.yaml"
+          load "./config/${CONFIG_DIR}.yaml"
           sh "echo $DIR_WINDOWS"
         }
         sh "echo $DIR_WINDOWS"

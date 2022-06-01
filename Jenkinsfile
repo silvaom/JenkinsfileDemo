@@ -55,6 +55,7 @@ pipeline {
     stage('Printing') {
         steps {
         sh """
+        echo "$INPUT_TAG"
         pwd
         ls -la
         ls -la scripts

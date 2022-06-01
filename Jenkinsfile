@@ -15,7 +15,7 @@ pipeline {
         checkout scm
         echo "There should be a step here"
         readFile(file: "config/pipeline.yaml")
-        echo "${GITREPO}"
+        sh "echo ${GITREPO}"
       }
     }
     stage('Deploy')

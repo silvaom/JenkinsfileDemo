@@ -15,9 +15,9 @@ pipeline {
         checkout scm
         echo "There should be a step here"
         script {
-          readProperties(file: './config/pipeline.yaml').each {key, value -> env[key] = value }
+          Map pipelineConfig = readYaml(file: "./config/pipeline.yaml")
         }
-        sh "echo ${INPUT_TAG}"
+        sh "echo ${pipelineConfig.INPUT_TAG}"
         } 
       }
     stage('Deploy')

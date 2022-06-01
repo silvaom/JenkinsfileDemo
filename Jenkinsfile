@@ -14,8 +14,10 @@ pipeline {
       steps {
         checkout scm
         echo "There should be a step here"
-        sh "source ./config/pipeline.yaml "
-        sh "echo ${GITREPO}"
+        script {
+          readProperties(file: ./config/pipeline.yaml).each {key, value -> env[key] = value }
+        }
+        sh "echo ${INPUT_TAG}"
         } 
       }
     stage('Deploy')

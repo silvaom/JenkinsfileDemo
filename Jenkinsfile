@@ -18,8 +18,9 @@ pipeline {
         sh "ls -la ./config"
         script {
           def config = readFile(file: "./config/pipeline.yaml").split('\n') as List
+          sh "echo ${config.GITREPO}"
         }
-        sh "echo ${GITREPO}"
+        
       }
     }
     stage('Deploy')

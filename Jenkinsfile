@@ -1,7 +1,5 @@
 @Library('jenkins-shared-libraries') _
 
-def config = readFile(file: "pipeline.yaml").split('\n') as List
-
 pipeline {
   agent any 
   //environment{
@@ -18,6 +16,9 @@ pipeline {
         echo "There should be a step here"
         //script {def data = readYaml(file: "config/pipeline.yaml") }
         sh "ls -la ./config"
+        script {
+          def config = readFile(file: "./config/pipeline.yaml").split('\n') as List
+        }
         sh "echo ${config.GITREPO}"
       }
     }

@@ -14,8 +14,8 @@ pipeline {
       steps {
         checkout scm
         echo "There should be a step here"
-        readFile(file: "config/pipeline.yaml")
-        sh "echo ${env.GITREPO}"
+        script {def data = readYaml(file: "config/pipeline.yaml") }
+        sh "echo ${data.GITREPO}"
       }
     }
     stage('Deploy')

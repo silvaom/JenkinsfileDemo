@@ -17,7 +17,7 @@ pipeline {
         script {
           load "./config/pipeline.yaml"
         }
-        sh "echo ${INPUT_TAG}"
+        sh "echo ${env.INPUT_TAG}"
         } 
       }
     stage('Deploy')

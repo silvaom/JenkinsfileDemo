@@ -11,7 +11,7 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        //checkout scm
+        checkout scm
         echo "There should be a step here"
         readFile('config/pipeline.yaml')
         sh "echo ${INPUT_TAG}"

@@ -14,7 +14,7 @@ pipeline {
       steps {
         checkout scm
         echo "There should be a step here"
-        readYaml(file: "./config/pipeline.yaml").split('\n') as List
+        sh "source ./config/pipeline.yaml "
         sh "echo ${GITREPO}"
         } 
       }

@@ -1,1 +1,1 @@
-ec2 --region=$AWS_DEFAULT_REGION describe-instances
+describe-instances
